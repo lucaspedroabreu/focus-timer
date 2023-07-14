@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+  body {
+    @apply bg-theme-gray-900 text-theme-gray-300 font-roboto;
+  }
+
+  input, textarea, button, a {
+    @apply font-roboto font-medium text-base text-theme-gray-300 bg-transparent;
+  }
+
+  h1 {
+    @apply text-7xl;
+  }
+
+  h2 {
+    @apply text-6xl;
+  }
+
+  h3 {
+    @apply text-5xl;
+  }
+
+  h4 {
+    @apply text-4xl;
+  }
+
+  :focus-visible {
+    box-shadow: 0 0 0 2px;
+    @apply outline-none shadow-focus shadow-theme-gradient-7;
+  }
+}
+
+@layer components {
+  .layout-container {
+    @apply center-container h-screen w-screen !important;
+  }
+
+  .nav-icon {
+    @apply w-12 h-12 flex items-center justify-center text-theme-gray-100;
+    @apply border-[3px] border-solid border-transparent;
+
+  }
+  .timer:hover {
+    @apply border-b-theme-gradient-2;
+  }
+
+  .scroll:hover {
+    @apply border-b-theme-gradient-10;
+  }
+
+  .home-container {
+    @apply flex flex-1 flex-col items-center justify-center;
+
+  }
+
+  .home__form {
+    @apply flex flex-col items-center gap-14;
+  }
+
+  .home__form-inputs {
+    @apply w-full flex flex-col text-lg font-bold items-center justify-center gap-2 text-theme-gray-100;
+  }
+
+  .home__form-input-group {
+    @apply w-full flex items-center justify-center gap-2 text-lg font-bold flex-wrap;
+  }
+
+  .home__form-count-down {
+    @apply font-roboto-mono text-[10rem] leading-[8rem] flex gap-4;
+  }
+
+  .home__form-count-down span {
+    @apply bg-theme-gray-700 py-8 px-4 rounded-lg relative;
+  }
+
+  .home__form-count-down .count-down-divider {
+    @apply py-8 px-0 text-theme-gradient-2 w-16 overflow-hidden flex justify-center items-center;
+  }
+
+  .home__form-button {
+    @apply w-full h-10 flex items-center justify-center gap-4 rounded-lg py-8;
+    @apply bg-theme-gradient-8 text-theme-gray-100 font-bold;
+  }
+}
+
+@layer utilities {
+
+  .center-container {
+    @apply h-full w-full relative;
+  }
+
+  .center-element {
+    @apply absolute top-1/2 left-1/2;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .timer.active {
+    @apply text-theme-gradient-2 border-b-theme-gradient-2;
+  }
+
+  .scroll.active {
+    @apply text-theme-gradient-10 border-b-theme-gradient-10;
+  }
+}
